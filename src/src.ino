@@ -5,13 +5,13 @@ Arduboy2 arduboy;
 const int GRID_SIZE = 8;
 const int SNAKE_MAX_LENGTH = 64;
 
-struct Point {
+struct GamePoint {
   int x, y;
 };
 
-Point snake[SNAKE_MAX_LENGTH];
+GamePoint snake[SNAKE_MAX_LENGTH];
 int snakeLength = 3;
-Point food;
+GamePoint food;
 int direction = 1; // 0=up, 1=right, 2=down, 3=left
 int score = 0;
 bool gameOver = false;
@@ -63,7 +63,7 @@ void handleInput() {
 }
 
 void updateGame() {
-  Point newHead = snake[0];
+  GamePoint newHead = snake[0];
   
   switch (direction) {
     case 0: newHead.y--; break; // up
