@@ -29,11 +29,11 @@ fi
 
 # Compile the sketch for Arduboy (uses Leonardo board)
 echo "Compiling sketch for Arduboy..."
-arduino-cli compile --fqbn arduino:avr:leonardo src/
+arduino-cli compile --fqbn arduino:avr:leonardo ./
 
 if [ $? -eq 0 ]; then
     echo "Build successful!"
-    echo "Firmware located at: src/build/arduino.avr.leonardo/src.ino.hex"
+    echo "Firmware located at: build/arduino.avr.leonardo/snake-two.ino.hex"
     echo "Ready to upload to Arduboy!"
 else
     echo "Build failed!"
